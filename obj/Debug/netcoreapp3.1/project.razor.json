@@ -14392,6 +14392,16 @@
   "RootNamespace": "Biblioteca",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\RegistrarUsuarios.cshtml",
+      "TargetPath": "Views\\Usuarios\\RegistrarUsuarios.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\ExcluirUsuario.cshtml",
+      "TargetPath": "Views\\Usuarios\\ExcluirUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14412,6 +14422,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\cadastroRealizado.cshtml",
+      "TargetPath": "Views\\Usuarios\\cadastroRealizado.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\editarUsuario.cshtml",
+      "TargetPath": "Views\\Usuarios\\editarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14419,6 +14439,11 @@
     {
       "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuarios\\NeedAdmin.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14459,6 +14484,11 @@
     {
       "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Emprestimo\\Edicao.cshtml",
       "TargetPath": "Views\\Emprestimo\\Edicao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\USER\\Documents\\pastaProvisoria\\UC07\\Atividade 2\\Biblioteca - netcore3.1\\Biblioteca\\Views\\Usuarios\\ListaDeUsuarios.cshtml",
+      "TargetPath": "Views\\Usuarios\\ListaDeUsuarios.cshtml",
       "FileKind": "mvc"
     },
     {
