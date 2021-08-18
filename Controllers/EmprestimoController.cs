@@ -17,7 +17,7 @@ namespace Biblioteca.Controllers
 
             CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
 
-            cadModel.Livros = livroService.ListarDisponiveis();
+            cadModel.Livros = livroService.ListarDisponiveis(); //Correção do problema 7
             return View(cadModel);
         }
 
@@ -48,7 +48,7 @@ namespace Biblioteca.Controllers
 
                 CadEmprestimoViewModel cadModel = new CadEmprestimoViewModel();
 
-                cadModel.Livros = livroService.ListarDisponiveis();
+                cadModel.Livros = livroService.ListarDisponiveis(); //Correção do problema 7
 
                 return View(cadModel);
             }
