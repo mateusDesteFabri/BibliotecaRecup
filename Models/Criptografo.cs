@@ -6,6 +6,7 @@ namespace Biblioteca.Models
 {
     public static class Criptografo
     {
+        //Melhoria código 17
         public static string TextoCriptografado(string textoClaro)
         {
             MD5 MD5Hasher = MD5.Create();

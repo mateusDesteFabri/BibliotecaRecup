@@ -47,7 +47,7 @@ namespace Biblioteca.Controllers
             Autenticacao.CheckLogin(this);
             Autenticacao.verificaSeUsuarioEAdmin(this);
 
-            novoUser.senha = Criptografo.TextoCriptografado(novoUser.senha);
+            novoUser.senha = Criptografo.TextoCriptografado(novoUser.senha); //Melhoria código 17
 
             UsuarioService us = new UsuarioService();
             us.incluirUsuario(novoUser);

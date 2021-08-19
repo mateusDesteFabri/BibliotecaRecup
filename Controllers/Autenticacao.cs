@@ -24,7 +24,7 @@ namespace Biblioteca.Controllers
             {
                 verificaSeUsuarioAdminExiste(bc);
                 
-                senha = Criptografo.TextoCriptografado(senha);
+                senha = Criptografo.TextoCriptografado(senha); //Melhoria código 17
 
                 IQueryable<Usuario> UsuarioEncontrado = bc.usuarios.Where(u => u.login==login && u.senha==senha);
                 List<Usuario>ListaUsuarioEncontrado = UsuarioEncontrado.ToList();
