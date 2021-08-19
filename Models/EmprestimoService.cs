@@ -36,7 +36,7 @@ namespace Biblioteca.Models
             {
                 IQueryable<Emprestimo> consulta;
 
-                if(filtro!=null)
+                if(filtro!=null) //Correção problema 10
                 {
                     switch(filtro.TipoFiltro)
                     {
