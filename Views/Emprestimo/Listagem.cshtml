@@ -1,6 +1,11 @@
-@model ICollection<Emprestimo>
+@model List<Emprestimo> 
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
+
+    int FiltroPorPag = Int32.Parse(ViewData["emprestimosPorPagina"].ToString());
+    int PaginaAtual = Int32.Parse(ViewData["PaginaAtual"].ToString());
+    int NumEmprestimosPorPag = (Model.Count<FiltroPorPag ? Model.Count : FiltroPorPag);
+    int NumTotalDePag = Model.Count/NumEmprestimosPorPag + (Model.Count%NumEmprestimosPorPag==0 ? 0 : 1);
 
     string Classe = "";
 }
@@ -17,7 +22,29 @@
         <div class="form-group mb-2 mx-sm-3">
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
+
         <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+        
+        <!-- Melhoria código 18 paginação -->
+        <div class="form-group">
+            <p style="margin-left:50px;padding:0px;">Paginação:</p>
+            <select name="itensPorPagina" id="itensPorPagina" style="margin-left:20px;padding:0px;">
+                <option value="10">10 empréstimos</option>
+                <option value="15">15 empréstimos</option>
+                <option value="30">30 empréstimos</option>
+                <option value="50">50 empréstimos</option>
+                <option value=@Model.Count>Todos</option>
+            </select>
+        </div>
+
+        <div id="SeletorPaginas" style="margin-left:20px;padding:0px;">
+            <span>Página:</span>
+            @for(int i=1; i<=NumTotalDePag;i++)
+            {
+                <span><a href="/Emprestimo/Listagem?PaginaAtual=@i">@i, </a></span>
+            }
+        </div>
+        
     </form>
     </div>
 </div>
@@ -40,9 +67,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var e in Model)
+                        @for(int i = (PaginaAtual-1)*NumEmprestimosPorPag; i<(NumEmprestimosPorPag*PaginaAtual<Model.Count?NumEmprestimosPorPag*PaginaAtual:Model.Count); i++)
                         {
-                            @if((System.DateTime.Compare(System.DateTime.Now, e.DataDevolucao)>0))
+                            @if((System.DateTime.Compare(System.DateTime.Now, Model[i].DataDevolucao)>0))
                             {
                                 Classe="text-danger";
                             }
@@ -52,13 +79,13 @@
                             }
 
                         <tr class="@Classe">
-                            <td>@e.Id</td>
-                            <td>@e.NomeUsuario</td>
-                            <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                            <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                            <td>@e.Livro.Titulo</td>
-                            <td>@e.Livro.Autor</td>
-                            <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                            <td>@Model[i].Id</td>
+                            <td>@Model[i].NomeUsuario</td>
+                            <td>@Model[i].DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                            <td>@Model[i].DataDevolucao.ToString("dd/MM/yyyy")</td>
+                            <td>@Model[i].Livro.Titulo</td>
+                            <td>@Model[i].Livro.Autor</td>
+                            <td><a href="/Emprestimo/Edicao/@Model[i].Id">Editar</a></td>
                         </tr>
                         }
                     </tbody>

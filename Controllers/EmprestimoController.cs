@@ -54,6 +54,28 @@ namespace Biblioteca.Controllers
             }
         }
 
+        
+        public IActionResult Listagem(string tipoFiltro, string filtro, string itensPorPagina, int NumDaPagina, int PaginaAtual)
+        {
+            Autenticacao.CheckLogin(this); //Correção problema 14
+            FiltrosEmprestimos objFiltro = null;
+
+            if(!string.IsNullOrEmpty(filtro))
+            {
+                objFiltro = new FiltrosEmprestimos();
+                objFiltro.Filtro = filtro;
+                objFiltro.TipoFiltro = tipoFiltro;
+            }
+
+                //Melhoria código 18
+                ViewData["emprestimosPorPagina"] = (string.IsNullOrEmpty(itensPorPagina) ? 10 : Int32.Parse(itensPorPagina));
+                ViewData["PaginaAtual"] = (PaginaAtual!=0 ? PaginaAtual : 1);
+            
+            EmprestimoService emprestimoService = new EmprestimoService();
+            return View(emprestimoService.ListarTodos(objFiltro));
+        }
+        
+        /* ORIGINAL
         public IActionResult Listagem(string tipoFiltro, string filtro)
         {
             Autenticacao.CheckLogin(this); //Correção problema 14
@@ -69,6 +91,7 @@ namespace Biblioteca.Controllers
             EmprestimoService emprestimoService = new EmprestimoService();
             return View(emprestimoService.ListarTodos(objFiltro));
         }
+        */
 
         public IActionResult Edicao(int id)
         {

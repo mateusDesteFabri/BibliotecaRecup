@@ -20,8 +20,12 @@
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
 
-        <div>
-            <select name="itensPorPagina" id="itensPorPagina">
+        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+        
+        <!-- Melhoria código 18 paginação -->
+        <div class="form-group">
+            <p style="margin-left:50px;padding:0px;">Paginação:</p>
+            <select name="itensPorPagina" id="itensPorPagina" style="margin-left:20px;padding:0px;">
                 <option value="10">10 livros</option>
                 <option value="15">15 livros</option>
                 <option value="30">30 livros</option>
@@ -30,9 +34,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-
-        <div id="SeletorPaginas">
+        <div id="SeletorPaginas" style="margin-left:20px;padding:0px;">
             <span>Página:</span>
             @for(int i=1; i<=NumTotalDePag;i++)
             {

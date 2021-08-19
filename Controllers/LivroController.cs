@@ -49,6 +49,7 @@ namespace Biblioteca.Controllers
                 objFiltro.TipoFiltro = tipoFiltro;
             }
 
+                //Melhoria código 18
                 ViewData["livrosPorPagina"] = (string.IsNullOrEmpty(itensPorPagina) ? 10 : Int32.Parse(itensPorPagina));
                 ViewData["PaginaAtual"] = (PaginaAtual!=0 ? PaginaAtual : 1);
                 
