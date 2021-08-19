@@ -21,7 +21,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Index()
         {
-            Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this); //Correção problema 14
             ViewData["mensagem"] = "seja bem-vindo ao sistema de controle de empréstimo de livros";
             return View();
         }
@@ -47,7 +47,7 @@ namespace Biblioteca.Controllers
             
         public IActionResult Privacy()
         {
-            Autenticacao.CheckLogin(this); //Solução problema 14
+            Autenticacao.CheckLogin(this); //Correção problema 14
             return View();
         }
     }
