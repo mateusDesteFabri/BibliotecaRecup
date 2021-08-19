@@ -17,7 +17,8 @@ namespace Biblioteca.Controllers
             }
         }
 
-        public static bool verificaLoginSenha(string login, string senha, Controller controller)
+        //Melhoria código 16
+        public static bool verificaLoginSenha(string login, string senha, Controller controller) 
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {

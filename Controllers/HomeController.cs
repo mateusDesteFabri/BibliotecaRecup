@@ -34,7 +34,8 @@ namespace Biblioteca.Controllers
         [HttpPost]
         public IActionResult Login(string login, string senha)
         {
-            if(Autenticacao.verificaLoginSenha(login,senha,this))
+            //Melhoria código 16
+            if(Autenticacao.verificaLoginSenha(login,senha,this)) 
             {
                 return RedirectToAction("Index");
             }
