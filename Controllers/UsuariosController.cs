@@ -17,6 +17,9 @@ namespace Biblioteca.Controllers
 
         public IActionResult editarUsuario(int id)
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
+
             Usuario u = new UsuarioService().Listar(id);
 
             return View(u);
@@ -54,6 +57,9 @@ namespace Biblioteca.Controllers
 
         public IActionResult ExcluirUsuario(int id)
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
+            
             return View(new UsuarioService().Listar(id));
         }
 
